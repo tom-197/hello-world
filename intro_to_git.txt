@@ -64,3 +64,4 @@ $ git commit -m 'Comment' # 'save' local content and changes to the local git re
 $ git push # push local content and tracking information to the Github repo
 $ git pull # pull changes from Github repo to local repo
 $ git diff # shows the changes that have been made before a commit
+$ git log # show history of commits
