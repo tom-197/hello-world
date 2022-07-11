@@ -1,0 +1,66 @@
+https://ubc-library-rc.github.io/intro-git/
+# contains a really simple intro to git and GitHub
+
+Use the git init command, which is simply short for initialise.
+$ git init
+Initialized empty Git repository in <your file path>/hello-world/.git/
+Your hello-world directory is now a git repository.
+
+The git status command displays the current state of a project.
+$ git status
+
+The output introduces two new Git concepts:
+branch main. A Git repository can be split into multiple “branches” that can be worked on independently before merging later. New repositories start with only one branch, named “main” by default. In this workshop everything we do will be in branch main.
+commit. The git commit command saves your changes to the repository. The output above tells us there is nothing new to save in our repository.
+
+Yo tell Git we want to track any changes we make to filename.ext, we use git add.
+$ git add filename.ext
+
+Now we are ready to commit our first changes. Commit is similar to “saving” a file, but in addition to saving the contents of a file git commit stores information about the file’s history, including what changes were made, when, and by whom.
+$ git commit -m 'Add index.md'
+
+SYNCHING WITH GITHUB
+
+We will run the list command (ls) to check what key pairs already exist on your computer. In our command we use the ~ as the shorthand for “my home directory.”
+ls -al ~/.ssh
+
+If you have not set up SSH, your output might look like this:
+ls: cannot access '/c/Users/YourName/.ssh': No such file or directory
+
+Follow link to create a SSH key if one doesn't exist, to copy the public key to Github, to create a Github repository, and to link the local repository to Github.
+
+To remove the link to the Github repo:
+git remote remove origin
+
+We can confirm that it is set up correctly with this command:
+$ git remote -v
+
+To synchronize the repositories with “git push” The git push command can “push” our local content and tracking information to the GitHub repository, synchronizing the content.
+$ git push -u origin main
+
+The nickname of our remote repository is “origin” and the default local branch name is “main”. The -u flag tells git to remember these parameters, so that next time we can simply run git push and Git will know what to do.
+
+If the Github repo is ahead of the local repo, then it may be necessary to 'force' synchronizing the content:
+$ git push -f origin main
+https://stackoverflow.com/questions/10753268/github-error-failed-to-push-some-refs-to-gitgithub-commyrepo-git
+
+The git status command will indicate the status after “pushing” is complete.
+$ git status
+
+Pulling changes
+When working with others or on multiple computers we need a way to pull all the remote changes back into our local repository. We can see how this works by adding a file to our GitHub repository, then “pulling” that change back to our computer.
+Near the bottom of the “hello-world” repository on GitHub there is a button to “Add a README” file to your repository. Click the button, enter some text, then scroll to the bottom and click “Commit new file” (The default commit message will be “Create README.md”, which is fine for our purposes).
+It is good practice to add a README file briefly describing what the project is about. If the README is in the root directory GitHub will automatically display it like a cover page for your repository.
+After adding a README on GitHub your local repository is out-of-sync with the remote repository. Let’s fix that by pulling the remote changes into local repository with git pull.
+$ git pull
+
+Reviewing local changes
+The git diff command shows the changes we have made before a commit. To test this, open “index.md” with any text editor and enter a new line of text (in this example we added “It’s a beautiful rainy day” on the second line of “index.md”). Save the file, then use git diff to see the changes.
+$ git diff
+
+$ git status
+$ git add filename.ext # add file to next snapshot
+$ git commit -m 'Comment' # 'save' local content and changes to the local git repo
+$ git push # push local content and tracking information to the Github repo
+$ git pull # pull changes from Github repo to local repo
+$ git diff # shows the changes that have been made before a commit
