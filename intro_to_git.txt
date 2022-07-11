@@ -65,3 +65,4 @@ $ git push # push local content and tracking information to the Github repo
 $ git pull # pull changes from Github repo to local repo
 $ git diff # shows the changes that have been made before a commit
 $ git log # show history of commits
+$ git remote -v # show status of connection to remote repo
