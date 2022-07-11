@@ -13,7 +13,7 @@ The output introduces two new Git concepts:
 branch main. A Git repository can be split into multiple “branches” that can be worked on independently before merging later. New repositories start with only one branch, named “main” by default. In this workshop everything we do will be in branch main.
 commit. The git commit command saves your changes to the repository. The output above tells us there is nothing new to save in our repository.
 
-Yo tell Git we want to track any changes we make to filename.ext, we use git add.
+To tell Git we want to track any changes we make to filename.ext, we use git add.
 $ git add filename.ext
 
 Now we are ready to commit our first changes. Commit is similar to “saving” a file, but in addition to saving the contents of a file git commit stores information about the file’s history, including what changes were made, when, and by whom.
