@@ -22,15 +22,16 @@ $ git commit -m 'Add index.md'
 SYNCHING WITH GITHUB
 
 We will run the list command (ls) to check what key pairs already exist on your computer. In our command we use the ~ as the shorthand for “my home directory.”
-ls -al ~/.ssh
+$ ls -al ~/.ssh
 
 If you have not set up SSH, your output might look like this:
-ls: cannot access '/c/Users/YourName/.ssh': No such file or directory
+$ ls: cannot access '/c/Users/YourName/.ssh': No such file or directory
 
-Follow link to create a SSH key if one doesn't exist, to copy the public key to Github, to create a Github repository, and to link the local repository to Github.
+Follow the above link to create a SSH key if one doesn't exist, to copy the public key to Github, to create a Github repository, and to link the local repository to Github.
 
 To remove the link to the Github repo:
-git remote remove origin
+$ git remote remove origin
+https://stackoverflow.com/questions/16330404/how-to-remove-remote-origin-from-a-git-repository
 
 We can confirm that it is set up correctly with this command:
 $ git remote -v
